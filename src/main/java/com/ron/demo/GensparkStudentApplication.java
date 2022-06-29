@@ -25,6 +25,7 @@ public class GensparkStudentApplication {
 	      repository.save(new Student("Ian", "Black"));
 	      repository.save(new Student("David", "Ducovny"));
 	      repository.save(new Student("Michelle", "Pfieffer"));
+	      repository.save(new Student("Marni", "Lafleur"));
 
 	      // fetch all students
 	      log.info("");
