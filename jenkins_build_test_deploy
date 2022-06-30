@@ -5,7 +5,7 @@ pipeline {
         stage('Compile') {
             steps {
                 withMaven(maven : '3.8.1') {
-                    bat "mvnw clean compile"
+                    bat "./mvnw clean compile"
                 }
             }
         }
@@ -13,7 +13,7 @@ pipeline {
         stage('Test') {
             steps {
                 withMaven(maven : '3.8.1') {
-                    bat "mvnw test"
+                    bat "./mvnw test"
                 }
             }
         }
@@ -21,7 +21,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 withMaven(maven : '3.8.1') {
-                    bat "mvnw deploy"
+                    bat "./mvnw deploy"
                 }
             }
         }
