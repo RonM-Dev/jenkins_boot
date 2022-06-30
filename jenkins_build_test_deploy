@@ -1,20 +1,28 @@
 pipeline {
-    agent Node_1
+    agent any
 
     stages {
-        stage('Build') {
+        stage('Compile') {
             steps {
-                ./mvnw clean
+                withMaven(maven : '3.8.1') {
+                    bat "mvn clean compile"
+                }
             }
         }
+
         stage('Test') {
             steps {
-                echo 'Testing..'
+                withMaven(maven : '3.8.1') {
+                    bat "mvn test"
+                }
             }
         }
+
         stage('Deploy') {
             steps {
-                echo 'Deploying....'
+                withMaven(maven : '3.8.1') {
+                    bat "mvn deploy"
+                }
             }
         }
     }
