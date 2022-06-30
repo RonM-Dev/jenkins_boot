@@ -21,7 +21,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 withMaven(maven : '3.8.1') {
-                    bat "mvnw install"
+                    bat "mvnw deploy"
                 }
             }
         }
